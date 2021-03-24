@@ -1,1 +1,1 @@
-workerp: ython3 bot.py
+workerp: python3 bot.py
