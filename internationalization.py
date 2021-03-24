@@ -41,7 +41,7 @@ class _Underscore(object):
             )
             for locale
             in available_locales.keys()
-            if locale != 'en_US'  # No translation file for en_US
+            if locale != 'pt_BR'  # No translation file for en_US
         }
         self.locale_stack = list()
 
@@ -107,7 +107,7 @@ def user_locale(func):
         with db_session:
             us = UserSetting.get(id=user.id)
 
-        if us and us.lang != 'en':
+        if us and us.lang != 'pt':
             _.push(us.lang)
         else:
             _.push('en_US')
@@ -130,7 +130,7 @@ def game_locales(func):
             for player in player.game.players:
                 us = UserSetting.get(id=player.user.id)
 
-                if us and us.lang != 'en':
+                if us and us.lang != 'pt':
                     loc = us.lang
                 else:
                     loc = 'en_US'
